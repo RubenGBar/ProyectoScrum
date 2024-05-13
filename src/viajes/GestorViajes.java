@@ -1,10 +1,13 @@
 package viajes;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.FileWriter;
 import java.util.ArrayList;
+import java.io.FileNotFoundException;
 
 /**
  * Esta clase se encargará de añadir, eliminar, modificar y consultar los viajes del fichero
@@ -21,6 +24,14 @@ public class GestorViajes {
 	 */
 	private static BufferedReader br;
 	
+	/**
+	 * Se emplea para cargar los datos de la lista de viajes a un fichero
+	 */
+	private static BufferedWriter wr;
+	
+	/**
+	 * Se encarga de poblar el ArrayList con los viajes del fichero
+	 */
 	public void preparar() {
 		String linea;
 		// almacena los valores almacenados en una línea temporalmente
@@ -40,6 +51,52 @@ public class GestorViajes {
 			System.err.println("No se ha encontrado el fichero de viajes.");
 		} catch (IOException e) {
 			e.printStackTrace();
+		} catch (Exception e) {
+			System.err.println("No se ha podido acceder a la lista de viajes: " + e.getMessage());
 		}
+	}
+	
+	/**
+	 * Imprime por pantalla todos los viajes registrados en la lista de viajes
+	 */
+	public void listarViajes() {
+		for(Viaje viaje: listaViajes) {
+			System.out.println(viaje);
+		}
+	}
+	
+	/**
+	 * Agrega un viaje a la lista
+	 * @param viaje
+	 * @return true si se ha podido agregar
+	 */
+	public void agregarViaje(Viaje viaje) {
+		if(!listaViajes.contains(viaje)) {
+			listaViajes.add(viaje);
+		}
+	}
+	
+	/**
+	 * Se encarga de almacenar en el archivo turismo.txt la lista de viajes
+	 * */
+	public void guardar() {
+		try {
+			wr = new BufferedWriter(new FileWriter("src/viajes/turismo.txt"));
+			for(Viaje viaje : listaViajes) {
+				wr.write(viaje.getLugar() + "::" + viaje.getFecha() + "::" + viaje.getPrecio());
+			}
+			wr.flush();
+			wr.close();
+		}catch(Exception e) {
+			System.err.println("Error al guardar la lista de viajes: " + e.getMessage());
+		}
+	}
+	
+	
+	/**
+	 * Constructor vacío
+	 */
+	public GestorViajes () {
+		preparar();
 	}
 }
