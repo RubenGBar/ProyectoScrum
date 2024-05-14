@@ -17,7 +17,7 @@ public class Principal {
 		String fecha;
 		
 		// int precio: precio de un viaje
-		int precio;
+		int precio = 0;
 		
 		// int opcion: opcion seleccionada por el usuario
 		int opcion = 0;
