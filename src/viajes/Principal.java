@@ -45,6 +45,7 @@ public class Principal {
 					
 					// Pide al usuario un lugar
 					System.out.println("Inserta un lugar");
+					sc.nextLine();
 					lugar = sc.nextLine();
 					
 					// Pide al usuario una fecha
