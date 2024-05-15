@@ -37,7 +37,7 @@ public class Principal {
 			
 				// Case 1: muestra la lista de viajes
 				case 1 -> {
-					System.out.println(gv.listaViajes.toString());
+					gv.listarViajes();
 				} // Fin Case 1
 				
 				// Case 2: añade un viaje
@@ -96,13 +96,13 @@ public class Principal {
 	 */
 	private static void mostrarMenu() {
 		System.out.println("Programa de gestion de viajes");
-		System.out.println("---------------------------------");
+		System.out.println("------------------------------------");
 		System.out.println("1. Ver viajes");
 		System.out.println("2. Añadir viajes");
 		System.out.println("3. Eliminar viajes");
 		System.out.println("4. Actualizar viajes");
 		System.out.println("5. Salir");
-		System.out.println("---------------------------------");
+		System.out.println("------------------------------------");
 		System.out.println("Elige una opcion");
 	}
 	
