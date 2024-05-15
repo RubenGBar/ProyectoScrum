@@ -96,6 +96,11 @@ public class Viaje {
 		this.precio = precio;
 	}
 	
+	
+	/**
+	 * Función para mostrar la información de cada viaje
+	 * @return Devuelve una cadena con la información de los viajes
+	 */
 	@Override
 	public String toString() {
 		String cadena = "";
@@ -109,6 +114,11 @@ public class Viaje {
 		return cadena;
 	}
 	
+	/**
+	 * Función para comnparar dos viajes y saber si son iguales
+	 * @param o Recibe un objeto que se casteará a uno de tipo viaje para poder comparar dos viajes
+	 * @return Devuelve true si la fecha y lugar son iguales y false en caso contrario
+	 */
 	@Override
 	public boolean equals(Object o) {
 		boolean iguales = false;
