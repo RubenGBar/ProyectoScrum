@@ -71,7 +71,7 @@ public class Viaje {
 			mes = Integer.parseInt(fecha.substring(3, 5));
 		} // Fin If
 
-		// If: Valida el aÃ±o
+		// If: Valida el anio
 		if (validarNumero(fecha, 3)) {
 			anio = Integer.parseInt(fecha.substring(6, 10));
 		} // Fin If
@@ -129,9 +129,9 @@ public class Viaje {
 		} catch (NumberFormatException e) {
 			
 			// Muestra un mensaje de error
-			System.out.println(Principal.ANSI_RED + "ââââââââââââââââââââââââââââââââââââââ" + Principal.ANSI_RESET);
-			System.out.println(Principal.ANSI_RED + "â       ERROR: numero invalido       â" + Principal.ANSI_RESET);
-			System.out.println(Principal.ANSI_RED + "ââââââââââââââââââââââââââââââââââââââ" + Principal.ANSI_RESET);
+			System.out.println(Principal.ANSI_RED + "╔════════════════════════════════════╗" + Principal.ANSI_RESET);
+			System.out.println(Principal.ANSI_RED + "║       ERROR: numero invalido       ║" + Principal.ANSI_RESET);
+			System.out.println(Principal.ANSI_RED + "╚════════════════════════════════════╝" + Principal.ANSI_RESET);
 			
 		} // Fin Try-Catch
 
@@ -216,11 +216,11 @@ public class Viaje {
 	public String toString() {
 		String cadena = "";
 
-		cadena += "ââââââââââââââââââââââââââââââââââââââ\n";
-		cadena += " â  Viaje a: " + this.lugar + "\n";
-		cadena += " â  Dia: " + this.fecha + "\n";
-		cadena += " â  Precio: " + this.precio + "\n";
-		cadena += "ââââââââââââââââââââââââââââââââââââââ\n";
+		cadena += "══════════════════════════════════════\n";
+		cadena += "Viaje a: " + this.lugar + "\n";
+		cadena += "Dia: " + this.fecha + "\n";
+		cadena += "Precio: " + this.precio + "\n";
+		cadena += "══════════════════════════════════════\n";
 
 		return cadena;
 	}
