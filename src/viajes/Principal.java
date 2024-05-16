@@ -5,6 +5,11 @@ import java.util.Scanner;
 
 public class Principal {
 
+	public static final String ANSI_RED = "\u001B[31m";
+	public static final String ANSI_GREEN = "\u001B[32m";
+	public static final String ANSI_BLUE = "\u001B[34m";
+	public static final String ANSI_RESET = "\u001B[0m";
+	
 	public static void main(String[] args) {
 		
 		// GestorViajes gv: crea un nuevo objeto GestorViajes
@@ -44,44 +49,58 @@ public class Principal {
 				case 2 -> {
 					
 					// Pide al usuario un lugar
-					System.out.println("Inserta un lugar");
+					System.out.println(ANSI_BLUE + "╔════════════════════════════════════╗" + ANSI_RESET);
+					System.out.println(ANSI_BLUE + "║          Inserta un lugar          ║" + ANSI_RESET);
+					System.out.println(ANSI_BLUE + "╚════════════════════════════════════╝" + ANSI_RESET);
 					sc.nextLine();
 					lugar = sc.nextLine();
 					
 					// Pide al usuario una fecha
-					System.out.println("Inserta una fecha");
+					System.out.println(ANSI_BLUE + "╔════════════════════════════════════╗" + ANSI_RESET);
+					System.out.println(ANSI_BLUE + "║         Inserta una fecha          ║" + ANSI_RESET);
+					System.out.println(ANSI_BLUE + "╚════════════════════════════════════╝" + ANSI_RESET);
 					fecha = sc.nextLine();
 					
 					// Try-Catch: Pide al usuario un precio
 					try {
-						System.out.println("Inserta un precio");
+						System.out.println(ANSI_BLUE + "╔════════════════════════════════════╗" + ANSI_RESET);
+						System.out.println(ANSI_BLUE + "║         Inserta un precio          ║" + ANSI_RESET);
+						System.out.println(ANSI_BLUE + "╚════════════════════════════════════╝" + ANSI_RESET);
 						precio = sc.nextInt();
 					} catch (InputMismatchException e) {
-						System.out.println("ERROR: respuesta invalida");
+						System.out.println(ANSI_RED + "╔════════════════════════════════════╗" + ANSI_RESET);
+						System.out.println(ANSI_RED + "║      ERROR: respuesta invalida     ║" + ANSI_RESET);
+						System.out.println(ANSI_RED + "╚════════════════════════════════════╝" + ANSI_RESET);
 					} finally {
 						sc.nextLine();
 					} // Fin Try-Catch
 					
-					// Añade el viaje
+					// Añade el viaje (necesita comprobacion)
 					gv.agregarViaje(new Viaje(lugar, fecha, precio));
 					
 				} // Fin Case 2
 				
 				// Case 3: elimina un viaje (WIP)
 				case 3 -> {
-					System.out.println("ERROR: opcion aun no disponible");
+					System.out.println(ANSI_RED + "╔════════════════════════════════════╗" + ANSI_RESET);
+					System.out.println(ANSI_RED + "║   ERROR: opcion aun no disponible  ║" + ANSI_RESET);
+					System.out.println(ANSI_RED + "╚════════════════════════════════════╝" + ANSI_RESET);
 				} // Fin Case 3
 				
 				// Case 4: actualiza un viaje (WIP)
 				case 4 -> {
-					System.out.println("ERROR: opcion aun no disponible");
+					System.out.println(ANSI_RED + "╔════════════════════════════════════╗" + ANSI_RESET);
+					System.out.println(ANSI_RED + "║   ERROR: opcion aun no disponible  ║" + ANSI_RESET);
+					System.out.println(ANSI_RED + "╚════════════════════════════════════╝" + ANSI_RESET);
 				} // Fin Case 4
 				
 			} // Fin Switch
 		} while (opcion != 5); // Fin Do-While
 		
 		// Muestra un mensaje cerrando el programa
-		System.out.println("Cerrando programa...");
+		System.out.println(ANSI_GREEN + "╔════════════════════════════════════╗" + ANSI_RESET);
+		System.out.println(ANSI_GREEN + "║        Cerrando programa...        ║" + ANSI_RESET);
+		System.out.println(ANSI_GREEN + "╚════════════════════════════════════╝" + ANSI_RESET);
 		
 		// Guarda los archivos en un documento nuevo
 		gv.guardar();
@@ -95,15 +114,17 @@ public class Principal {
 	 * Funcion que muestra el menu
 	 */
 	private static void mostrarMenu() {
-		System.out.println("Programa de gestion de viajes");
-		System.out.println("------------------------------------");
-		System.out.println("1. Ver viajes");
-		System.out.println("2. Añadir viajes");
-		System.out.println("3. Eliminar viajes");
-		System.out.println("4. Actualizar viajes");
-		System.out.println("5. Salir");
-		System.out.println("------------------------------------");
-		System.out.println("Elige una opcion");
+		System.out.println(ANSI_RED + "╔════════════════════════════════════╗" + ANSI_RESET);
+		System.out.println(ANSI_RED + "║    Programa de gestion de viajes   ║" + ANSI_RESET);
+		System.out.println(ANSI_RED + "╠════════════════════════════════════╣" + ANSI_RESET);
+		System.out.println(ANSI_GREEN + "║           1. Ver viajes            ║" + ANSI_RESET);
+		System.out.println(ANSI_GREEN + "║          2. Añadir viajes          ║" + ANSI_RESET);
+		System.out.println(ANSI_GREEN + "║         3. Eliminar viajes         ║" + ANSI_RESET);
+		System.out.println(ANSI_GREEN + "║        4. Actualizar viajes        ║" + ANSI_RESET);
+		System.out.println(ANSI_GREEN + "║              5. Salir              ║" + ANSI_RESET);
+		System.out.println(ANSI_BLUE + "╠════════════════════════════════════╣" + ANSI_RESET);
+		System.out.println(ANSI_BLUE + "║          Elige una opcion          ║" + ANSI_RESET);
+		System.out.println(ANSI_BLUE + "╚════════════════════════════════════╝" + ANSI_RESET);
 	}
 	
 }
