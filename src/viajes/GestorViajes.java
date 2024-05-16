@@ -87,19 +87,37 @@ public class GestorViajes {
 			}
 		}
 		
-		do {
-			System.out.println("Introduzca el índice del viaje a seleccionar:");
-			try {
-				option = sc.nextInt();
-				sc.nextLine();
-			}catch(IllegalArgumentException e) {
-				System.err.println("Tipo de dato incorrecto.");
-				sc.nextLine();
-			}
-			
-		}while(option < 0 || option > viajesLugar.size());
+		if(viajesLugar.size() >= 2) {
+			do {
+				System.out.println("Introduzca el índice del viaje a seleccionar:");
+				try {
+					option = sc.nextInt();
+					sc.nextLine();
+				}catch(IllegalArgumentException e) {
+					System.err.println("Tipo de dato incorrecto.");
+					sc.nextLine();
+				}
+				
+			}while(option < 0 || option > viajesLugar.size());
+		}else {
+			option = 0;
+		}
 		
 		return viajesLugar.get(option);
+	}
+	
+	/**
+	 * Borra un viaje de los que tienen como destino el lugar pasado por parámetros
+	 * @param viaje
+	 * @return true si el borrado ha sido correcto y false si no se ha podido borrar
+	 */
+	public boolean eliminarViaje(String lugar) {
+		Viaje viajeABorrar = elegirViaje(lugar);
+		boolean eliminado = false;
+		
+		eliminado = listaViajes.remove(viajeABorrar);
+		
+		return eliminado;
 	}
 	
 	/**
