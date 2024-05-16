@@ -92,9 +92,14 @@ public class Principal {
 				
 				// Case 4: actualiza un viaje (WIP)
 				case 4 -> {
-					System.out.println(ANSI_RED + "╔════════════════════════════════════╗" + ANSI_RESET);
-					System.out.println(ANSI_RED + "║   ERROR: opcion aun no disponible  ║" + ANSI_RESET);
-					System.out.println(ANSI_RED + "╚════════════════════════════════════╝" + ANSI_RESET);
+					System.out.println(ANSI_BLUE + "╔════════════════════════════════════╗" + ANSI_RESET);
+					System.out.println(ANSI_BLUE + "║         Inserta un viaje           ║" + ANSI_RESET);
+					System.out.println(ANSI_BLUE + "║      a modificar por su lugar      ║" + ANSI_RESET);
+					System.out.println(ANSI_BLUE + "╚════════════════════════════════════╝" + ANSI_RESET);
+					
+					lugar = sc.nextLine();
+					
+					gv.elegirViaje(lugar);
 				} // Fin Case 4
 				
 			} // Fin Switch
