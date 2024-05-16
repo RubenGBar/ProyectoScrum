@@ -1,8 +1,8 @@
 package viajes;
 
 /**
- * Clase que representa la información asociada a un viaje con los métodos para poder actualizar sus
- * datos, obtenerlos y comprobar que dos viajes sean iguales, además de los constructores necesarios
+ * Clase que representa la informacion asociada a un viaje con los metodos para poder actualizar sus
+ * datos, obtenerlos y comprobar que dos viajes sean iguales, ademas de los constructores necesarios
  */
 public class Viaje {
 	
@@ -23,7 +23,7 @@ public class Viaje {
 	
 	/**
 	 * Constructor para crear objetos con todos sus atributos
-	 * @param lugar Será el lugar del viaje
+	 * @param lugar Sera el lugar del viaje
 	 * @param fecha La fecha del viaje
 	 * @param precio Precio del viaje
 	 */
@@ -50,14 +50,14 @@ public class Viaje {
 	}
 	
 	/**
-	 * Método para obtener el lugar del viaje
+	 * Metodo para obtener el lugar del viaje
 	 * @return Devuele el lugar del viaje
 	 */
 	public String getLugar() {
 		return lugar;
 	}
 	/**
-	 * Método para actualizar el lugar del viaje
+	 * Metodo para actualizar el lugar del viaje
 	 * @param lugar Nuevo lugar a actualizar
 	 */
 	public void setLugar(String lugar) {
@@ -66,14 +66,14 @@ public class Viaje {
 		}
 	}
 	/**
-	 * Método para obtener la fecha del viaje 
+	 * Metodo para obtener la fecha del viaje 
 	 * @return Devuelve la fecha del viaje
 	 */
 	public String getFecha() {
 		return fecha;
 	}
 	/**
-	 * Método para actualizar la fecha del viaje
+	 * Metodo para actualizar la fecha del viaje
 	 * @param fecha Fecha con la que actualizar el viaje
 	 */
 	public void setFecha(String fecha) {
@@ -82,14 +82,14 @@ public class Viaje {
 		}
 	}
 	/**
-	 * Método para obtener el precio del viaje 
+	 * Metodo para obtener el precio del viaje 
 	 * @return Devuelve el precio del viaje
 	 */
 	public int getPrecio() {
 		return precio;
 	}
 	/**
-	 * Método para actualizar el precio del viaje
+	 * Metodo para actualizar el precio del viaje
 	 * @param precio Precio con el que actualizar el viaje
 	 */
 	public void setPrecio(int precio) {
@@ -107,7 +107,7 @@ public class Viaje {
 		
 		cadena += "------------------------------------\n";
 		cadena += "Viaje a: " + this.lugar + "\n";
-		cadena += "Día: " + this.fecha + "\n";
+		cadena += "Dia: " + this.fecha + "\n";
 		cadena += "Precio: " + this.precio + "\n";
 		cadena += "------------------------------------\n";
 		
