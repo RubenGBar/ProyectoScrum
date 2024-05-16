@@ -4,10 +4,10 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 /**
  * Esta clase se encargará de añadir, eliminar, modificar y consultar los viajes del fichero
@@ -63,6 +63,61 @@ public class GestorViajes {
 		for(Viaje viaje: listaViajes) {
 			System.out.println(viaje);
 		}
+	}
+	
+	/**
+	 * Se encarga de conseguir el viaje sobre el que el usuario quiere operar alguna accion destructiva
+	 * (ediciones y borrados)
+	 * @param lugar
+	 * @return lugar elegido por el usuario
+	 */
+	public Viaje elegirViaje(String lugar) {
+		ArrayList<Viaje> viajesLugar = new ArrayList<>();
+		Scanner sc = new Scanner(System.in);
+		// usamos esta variable para iterar sobre listaViajes y agregar los viajes a viajesLugar
+		Viaje temp;
+		// almacena la opcion que ha seleccionado el usuario
+		int option = -1;
+		
+		for(int i = 0; i < listaViajes.size(); i++) {
+			temp = listaViajes.get(i);
+			if(temp.lugar.equals(lugar)) {
+				viajesLugar.add(temp);
+				System.out.println(i + ". Lugar: " + temp.lugar + " Fecha: " + temp.fecha + " Precio: " + temp.precio + "€");
+			}
+		}
+		
+		if(viajesLugar.size() >= 2) {
+			do {
+				System.out.println("Introduzca el índice del viaje a seleccionar:");
+				try {
+					option = sc.nextInt();
+					sc.nextLine();
+				}catch(IllegalArgumentException e) {
+					System.err.println("Tipo de dato incorrecto.");
+					sc.nextLine();
+				}
+				
+			}while(option < 0 || option > viajesLugar.size());
+		}else {
+			option = 0;
+		}
+		
+		return viajesLugar.get(option);
+	}
+	
+	/**
+	 * Borra un viaje de los que tienen como destino el lugar pasado por parámetros
+	 * @param viaje
+	 * @return true si el borrado ha sido correcto y false si no se ha podido borrar
+	 */
+	public boolean eliminarViaje(String lugar) {
+		Viaje viajeABorrar = elegirViaje(lugar);
+		boolean eliminado = false;
+		
+		eliminado = listaViajes.remove(viajeABorrar);
+		
+		return eliminado;
 	}
 	
 	/**
