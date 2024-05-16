@@ -71,7 +71,7 @@ public class Viaje {
 			mes = Integer.parseInt(fecha.substring(3, 5));
 		} // Fin If
 
-		// If: Valida el año
+		// If: Valida el aÃ±o
 		if (validarNumero(fecha, 3)) {
 			anio = Integer.parseInt(fecha.substring(6, 10));
 		} // Fin If
@@ -116,7 +116,7 @@ public class Viaje {
 				Integer.parseInt(fecha.substring(3, 5));
 			} // Fin Case 2
 			
-			// Case 3: analiza el año
+			// Case 3: analiza el aÃ±o
 			case 3 -> {
 				Integer.parseInt(fecha.substring(6, 10));
 			} // Fin Case 3
@@ -129,9 +129,9 @@ public class Viaje {
 		} catch (NumberFormatException e) {
 			
 			// Muestra un mensaje de error
-			System.out.println(Principal.ANSI_RED + "╔════════════════════════════════════╗" + Principal.ANSI_RESET);
-			System.out.println(Principal.ANSI_RED + "║       ERROR: numero invalido       ║" + Principal.ANSI_RESET);
-			System.out.println(Principal.ANSI_RED + "╚════════════════════════════════════╝" + Principal.ANSI_RESET);
+			System.out.println(Principal.ANSI_RED + "ââââââââââââââââââââââââââââââââââââââ" + Principal.ANSI_RESET);
+			System.out.println(Principal.ANSI_RED + "â       ERROR: numero invalido       â" + Principal.ANSI_RESET);
+			System.out.println(Principal.ANSI_RED + "ââââââââââââââââââââââââââââââââââââââ" + Principal.ANSI_RESET);
 			
 		} // Fin Try-Catch
 
@@ -208,26 +208,27 @@ public class Viaje {
 	public void setPrecio(int precio) {
 		this.precio = precio;
 	}
-
 	/**
-	 * Funcion toString: imprime el lugar, la fecha y el precio de un viaje
+	 * Función para mostrar la información de cada viaje
+	 * @return Devuelve una cadena con la información de los viajes
 	 */
 	@Override
 	public String toString() {
 		String cadena = "";
 
-		cadena += "══════════════════════════════════════\n";
-		cadena += " ■ Viaje a: " + this.lugar + "\n";
-		cadena += " ■ Dia: " + this.fecha + "\n";
-		cadena += " ■ Precio: " + this.precio + "\n";
-		cadena += "══════════════════════════════════════\n";
+		cadena += "ââââââââââââââââââââââââââââââââââââââ\n";
+		cadena += " â  Viaje a: " + this.lugar + "\n";
+		cadena += " â  Dia: " + this.fecha + "\n";
+		cadena += " â  Precio: " + this.precio + "\n";
+		cadena += "ââââââââââââââââââââââââââââââââââââââ\n";
 
 		return cadena;
 	}
-
+	
 	/**
-	 * Funcion equals: comprueba si dos viajes son iguales a base de la fecha y del
-	 * lugar
+	 * Función para comnparar dos viajes y saber si son iguales
+	 * @param o Recibe un objeto que se casteará a uno de tipo viaje para poder comparar dos viajes
+	 * @return Devuelve true si la fecha y lugar son iguales y false en caso contrario
 	 */
 	@Override
 	public boolean equals(Object o) {
