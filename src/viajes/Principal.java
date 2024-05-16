@@ -80,11 +80,14 @@ public class Principal {
 					
 				} // Fin Case 2
 				
-				// Case 3: elimina un viaje (WIP)
+				// Case 3: elimina un viaje
 				case 3 -> {
-					System.out.println(ANSI_RED + "╔════════════════════════════════════╗" + ANSI_RESET);
-					System.out.println(ANSI_RED + "║   ERROR: opcion aun no disponible  ║" + ANSI_RESET);
-					System.out.println(ANSI_RED + "╚════════════════════════════════════╝" + ANSI_RESET);
+					System.out.println(ANSI_BLUE + "╔════════════════════════════════════╗" + ANSI_RESET);
+					System.out.println(ANSI_BLUE + "║          Inserta un lugar          ║" + ANSI_RESET);
+					System.out.println(ANSI_BLUE + "╚════════════════════════════════════╝" + ANSI_RESET);
+					sc.nextLine();
+					lugar = sc.nextLine();
+					gv.eliminarViaje(lugar);
 				} // Fin Case 3
 				
 				// Case 4: actualiza un viaje (WIP)
