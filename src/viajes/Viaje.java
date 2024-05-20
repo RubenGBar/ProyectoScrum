@@ -20,7 +20,7 @@ public class Viaje {
 	/**
 	 * Atributo para guardar el precio del viaje
 	 */
-	int precio = 0;
+	double precio = 0;
 
 	/**
 	 * Constructor para crear objetos con todos sus atributos
@@ -29,7 +29,7 @@ public class Viaje {
 	 * @param fecha  La fecha del viaje
 	 * @param precio Precio del viaje
 	 */
-	public Viaje(String lugar, String fecha, int precio) {
+	public Viaje(String lugar, String fecha, double precio) {
 		if (lugar != null && !lugar.equals("")) {
 			this.lugar = lugar;
 		}
@@ -196,7 +196,7 @@ public class Viaje {
 	 * 
 	 * @return Devuelve el precio del viaje
 	 */
-	public int getPrecio() {
+	public double getPrecio() {
 		return precio;
 	}
 
@@ -205,12 +205,12 @@ public class Viaje {
 	 * 
 	 * @param precio Precio con el que actualizar el viaje
 	 */
-	public void setPrecio(int precio) {
+	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
 	/**
-	 * Función para mostrar la información de cada viaje
-	 * @return Devuelve una cadena con la información de los viajes
+	 * Funcion para mostrar la informacion de cada viaje
+	 * @return Devuelve una cadena con la informacion de los viajes
 	 */
 	@Override
 	public String toString() {

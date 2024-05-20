@@ -34,7 +34,7 @@ public class GestorViajes {
 	 */
 	public void preparar() {
 		String linea;
-		// almacena los valores almacenados en una línea temporalmente
+		// almacena los valores almacenados en una linea temporalmente
 		String[] viajeString;
 		try {
 			// acceso al fichero
@@ -170,7 +170,7 @@ public class GestorViajes {
 	}
 	
 	/**
-	 * Borra un viaje de los que tienen como destino el lugar pasado por parámetros
+	 * Borra un viaje de los que tienen como destino el lugar pasado por parÃ¡metros
 	 * @param viaje
 	 * @return true si el borrado ha sido correcto y false si no se ha podido borrar
 	 */
@@ -196,12 +196,12 @@ public class GestorViajes {
 	
 	/**
 	 * Se encarga de almacenar en el archivo turismo.txt la lista de viajes
-	 * */
+	 **/
 	public void guardar() {
 		try {
 			wr = new BufferedWriter(new FileWriter("src/viajes/turismo.txt"));
 			for(Viaje viaje : listaViajes) {
-				wr.write(viaje.getLugar() + "::" + viaje.getFecha() + "::" + viaje.getPrecio());
+				wr.write(viaje.getLugar() + "::" + viaje.getFecha() + "::" + viaje.getPrecio() + "\n");
 			}
 			wr.flush();
 			wr.close();
