@@ -61,27 +61,36 @@ public class Viaje {
 		// int anio: anio de la fecha
 		int anio = 0;
 
-		// If: Valida los dias
-		if (validarNumero(fecha, 1)) {
-			dias = Integer.parseInt(fecha.substring(0, 2));
-		} // Fin If
+		// Try-Catch
+		try {
+			
+			// If: Valida los dias
+			if (validarNumero(fecha, 1)) {
+				dias = Integer.parseInt(fecha.substring(0, 2));
+			} // Fin If
 
-		// If: Valida el mes
-		if (validarNumero(fecha, 2)) {
-			mes = Integer.parseInt(fecha.substring(3, 5));
-		} // Fin If
+			// If: Valida el mes
+			if (validarNumero(fecha, 2)) {
+				mes = Integer.parseInt(fecha.substring(3, 5));
+			} // Fin If
 
-		// If: Valida el anio
-		if (validarNumero(fecha, 3)) {
-			anio = Integer.parseInt(fecha.substring(6, 10));
-		} // Fin If
-
-		// If: si la fecha no es vacia, o esta en el formato 00/00/0000 o sus fechas
-		// sean validas, isTrue sera valido
-		if (fecha != null && !fecha.equals("") && fecha.matches("[0-9]{2}/[0-9]{2}/[0-9]{4}") && dias >= 1 && dias <= 31
-				&& mes >= 1 && mes <= 12 && anio >= 1901) {
-			isTrue = true;
-		} // Fin If
+			// If: Valida el anio
+			if (validarNumero(fecha, 3)) {
+				anio = Integer.parseInt(fecha.substring(6, 10));
+			} // Fin If
+			
+			// If: si la fecha no es vacia, o esta en el formato 00/00/0000 o sus fechas
+			// sean validas, isTrue sera valido
+			if (fecha != null && !fecha.equals("") && fecha.matches("[0-9]{2}/[0-9]{2}/[0-9]{4}") && dias >= 1 && dias <= 31
+					&& mes >= 1 && mes <= 12 && anio >= 1901) {
+				isTrue = true;
+			} // Fin If
+			
+		} catch (StringIndexOutOfBoundsException e) {
+			System.out.println(Principal.ANSI_RED + "╔════════════════════════════════════╗" + Principal.ANSI_RESET);
+			System.out.println(Principal.ANSI_RED + "║        ERROR: fecha invalida       ║" + Principal.ANSI_RESET);
+			System.out.println(Principal.ANSI_RED + "╚════════════════════════════════════╝" + Principal.ANSI_RESET);
+		} // Fin Try-Catch
 
 		// Devuelve isTrue
 		return isTrue;
