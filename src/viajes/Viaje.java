@@ -116,7 +116,7 @@ public class Viaje {
 				Integer.parseInt(fecha.substring(3, 5));
 			} // Fin Case 2
 			
-			// Case 3: analiza el aÃÂ±o
+			// Case 3: analiza el anio
 			case 3 -> {
 				Integer.parseInt(fecha.substring(6, 10));
 			} // Fin Case 3
@@ -209,8 +209,8 @@ public class Viaje {
 		this.precio = precio;
 	}
 	/**
-	 * FunciÃ³n para mostrar la informaciÃ³n de cada viaje
-	 * @return Devuelve una cadena con la informaciÃ³n de los viajes
+	 * Funcion para mostrar la informacion de cada viaje
+	 * @return Devuelve una cadena con la informacion de los viajes
 	 */
 	@Override
 	public String toString() {
@@ -226,8 +226,8 @@ public class Viaje {
 	}
 	
 	/**
-	 * FunciÃ³n para comnparar dos viajes y saber si son iguales
-	 * @param o Recibe un objeto que se castearÃ¡ a uno de tipo viaje para poder comparar dos viajes
+	 * Función para comnparar dos viajes y saber si son iguales
+	 * @param o Recibe un objeto que se casteara a uno de tipo viaje para poder comparar dos viajes
 	 * @return Devuelve true si la fecha y lugar son iguales y false en caso contrario
 	 */
 	@Override

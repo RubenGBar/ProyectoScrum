@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * Esta clase se encargarÃ¡ de aÃ±adir, eliminar, modificar y consultar los viajes del fichero
+ * Esta clase se encargara de añadir, eliminar, modificar y consultar los viajes del fichero
  * @author Alonso
  */
 public class GestorViajes {
@@ -34,7 +34,7 @@ public class GestorViajes {
 	 */
 	public void preparar() {
 		String linea;
-		// almacena los valores almacenados en una lÃ­nea temporalmente
+		// almacena los valores almacenados en una linea temporalmente
 		String[] viajeString;
 		try {
 			// acceso al fichero
@@ -102,14 +102,14 @@ public class GestorViajes {
 		}else {
 			option = 0;
 		}
-		sc.close();
+		
 		return viajesLugar.get(option);
 	}
 	
 
 	/**
 	 * 
-	 * Función que modifica un viaje y le pregunta al usuario si quiere modificar la fehca o precio
+	 * Funcion que modifica un viaje y le pregunta al usuario si quiere modificar la fehca o precio
 	 * @param lugar Lugar del viaje a modificar
 	 * @return Devuelve true si se ha podido modificar el viaje y false en caso contrario
 	 */
@@ -165,7 +165,7 @@ public class GestorViajes {
 			}
 			cont++;
 		}
-		sc.close();
+		
 		return modificado;
 	}
 	
@@ -196,7 +196,7 @@ public class GestorViajes {
 	
 	/**
 	 * Se encarga de almacenar en el archivo turismo.txt la lista de viajes
-	 * */
+	 **/
 	public void guardar() {
 		try {
 			wr = new BufferedWriter(new FileWriter("src/viajes/turismo.txt"));
@@ -212,7 +212,7 @@ public class GestorViajes {
 	
 	
 	/**
-	 * Constructor vacÃ­o
+	 * Constructor vacio
 	 */
 	public GestorViajes () {
 		preparar();
