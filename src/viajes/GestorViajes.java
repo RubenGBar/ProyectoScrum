@@ -170,68 +170,6 @@ public class GestorViajes {
 	}
 	
 	/**
-	 * 
-	 * Función que modifica un viaje y le pregunta al usuario si quiere modificar la fehca o precio
-	 * @param lugar Lugar del viaje a modificar
-	 * @return Devuelve true si se ha podido modificar el viaje y false en caso contrario
-	 */
-	public boolean modificarViaje(String lugar) {
-		Viaje viajeAModificar = elegirViaje(lugar);
-		boolean modificado = false;
-		String fecha = "";
-		double precio = 0;
-		int opc = 0;
-		Scanner sc = new Scanner(System.in);
-		int cont = 0;
-		
-		while(cont < listaViajes.size() && !modificado) {
-			
-			if(viajeAModificar.lugar.equals(listaViajes.get(cont).lugar)) {
-				System.out.println("¿Que quiere modificar?");
-				System.out.println("1. Fecha");
-				System.out.println("2. Precio");
-				
-				opc = sc.nextInt();
-				
-				switch(opc) {
-					case 1 -> {
-						System.out.println("Introduzca una fecha nueva");
-						sc.nextLine();
-						
-						fecha = sc.nextLine();
-						
-						if(viajeAModificar.validarFecha(fecha)) {
-							listaViajes.get(cont).setFecha(fecha);
-							modificado = true;
-						} else {
-							System.out.println("La fehca no cumple el formato");
-						}
-						
-					}
-					case 2 -> {
-						System.out.println("Introduzca un nuevo precio");
-						sc.nextLine();
-						
-						precio = sc.nextDouble();
-						
-						listaViajes.get(cont).setPrecio(precio);
-						
-						modificado = true;
-						
-					}
-					
-					default -> {
-						System.out.println("Opción Incorrecta");
-					}
-				}
-			}
-			cont++;
-		}
-		
-		return modificado;
-	}
-	
-	/**
 	 * Borra un viaje de los que tienen como destino el lugar pasado por parÃ¡metros
 	 * @param viaje
 	 * @return true si el borrado ha sido correcto y false si no se ha podido borrar
