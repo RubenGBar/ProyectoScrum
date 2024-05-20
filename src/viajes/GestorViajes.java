@@ -102,7 +102,7 @@ public class GestorViajes {
 		}else {
 			option = 0;
 		}
-		sc.close();
+		
 		return viajesLugar.get(option);
 	}
 	
@@ -165,7 +165,7 @@ public class GestorViajes {
 			}
 			cont++;
 		}
-		sc.close();
+		
 		return modificado;
 	}
 	
