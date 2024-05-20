@@ -102,7 +102,7 @@ public class GestorViajes {
 		}else {
 			option = 0;
 		}
-		
+		sc.close();
 		return viajesLugar.get(option);
 	}
 	
