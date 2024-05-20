@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * Esta clase se encargará de añadir, eliminar, modificar y consultar los viajes del fichero
+ * Esta clase se encargara de añadir, eliminar, modificar y consultar los viajes del fichero
  * @author Alonso
  */
 public class GestorViajes {
@@ -89,7 +89,7 @@ public class GestorViajes {
 		
 		if(viajesLugar.size() >= 2) {
 			do {
-				System.out.println("Introduzca el índice del viaje a seleccionar:");
+				System.out.println("Introduzca el indice del viaje a seleccionar:");
 				try {
 					option = sc.nextInt();
 					sc.nextLine();
@@ -109,7 +109,7 @@ public class GestorViajes {
 
 	/**
 	 * 
-	 * Función que modifica un viaje y le pregunta al usuario si quiere modificar la fehca o precio
+	 * Funcion que modifica un viaje y le pregunta al usuario si quiere modificar la fehca o precio
 	 * @param lugar Lugar del viaje a modificar
 	 * @return Devuelve true si se ha podido modificar el viaje y false en caso contrario
 	 */
@@ -212,7 +212,7 @@ public class GestorViajes {
 	
 	
 	/**
-	 * Constructor vacío
+	 * Constructor vacio
 	 */
 	public GestorViajes () {
 		preparar();

@@ -116,7 +116,7 @@ public class Viaje {
 				Integer.parseInt(fecha.substring(3, 5));
 			} // Fin Case 2
 			
-			// Case 3: analiza el aÃ±o
+			// Case 3: analiza el anio
 			case 3 -> {
 				Integer.parseInt(fecha.substring(6, 10));
 			} // Fin Case 3
@@ -227,7 +227,7 @@ public class Viaje {
 	
 	/**
 	 * Función para comnparar dos viajes y saber si son iguales
-	 * @param o Recibe un objeto que se casteará a uno de tipo viaje para poder comparar dos viajes
+	 * @param o Recibe un objeto que se casteara a uno de tipo viaje para poder comparar dos viajes
 	 * @return Devuelve true si la fecha y lugar son iguales y false en caso contrario
 	 */
 	@Override
