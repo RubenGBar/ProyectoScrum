@@ -211,7 +211,7 @@ public class GestorViajes {
 	
 	
 	/**
-	 * Constructor vacÃ­o
+	 * Constructor vacio
 	 */
 	public GestorViajes () {
 		preparar();
