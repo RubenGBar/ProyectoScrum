@@ -96,12 +96,6 @@ public class Principal {
 					System.out.println(ANSI_BLUE + "║         Inserta un viaje           ║" + ANSI_RESET);
 					System.out.println(ANSI_BLUE + "║      a modificar por su lugar      ║" + ANSI_RESET);
 					System.out.println(ANSI_BLUE + "╚════════════════════════════════════╝" + ANSI_RESET);
-
-					
-					lugar = sc.nextLine();
-					
-					gv.elegirViaje(lugar);
-
 					sc.nextLine();
 					lugar = sc.nextLine();
 					gv.modificarViaje(lugar);
