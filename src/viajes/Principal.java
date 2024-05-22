@@ -15,7 +15,7 @@ public class Principal {
 		// GestorViajes gv: crea un nuevo objeto GestorViajes
 		GestorViajes gv = new GestorViajes();
 		
-		// String lugar: lugar de uin viaje
+		// String lugar: lugar de un viaje
 		String lugar;
 		
 		// String fecha: fecha de un viaje
@@ -45,7 +45,7 @@ public class Principal {
 					gv.listarViajes();
 				} // Fin Case 1
 				
-				// Case 2: añade un viaje
+				// Case 2: agrega un viaje
 				case 2 -> {
 					
 					// Pide al usuario un lugar
@@ -75,7 +75,7 @@ public class Principal {
 						sc.nextLine();
 					} // Fin Try-Catch
 					
-					// Añade el viaje (necesita comprobacion)
+					// Agrega el viaje (necesita comprobacion)
 					gv.agregarViaje(new Viaje(lugar, fecha, precio));
 					
 				} // Fin Case 2
@@ -90,16 +90,22 @@ public class Principal {
 					gv.eliminarViaje(lugar);
 				} // Fin Case 3
 				
-				// Case 4: actualiza un viaje (WIP)
+				// Case 4: actualiza un viaje 
 				case 4 -> {
 					System.out.println(ANSI_BLUE + "╔════════════════════════════════════╗" + ANSI_RESET);
 					System.out.println(ANSI_BLUE + "║         Inserta un viaje           ║" + ANSI_RESET);
 					System.out.println(ANSI_BLUE + "║      a modificar por su lugar      ║" + ANSI_RESET);
 					System.out.println(ANSI_BLUE + "╚════════════════════════════════════╝" + ANSI_RESET);
+
 					
 					lugar = sc.nextLine();
 					
 					gv.elegirViaje(lugar);
+
+					sc.nextLine();
+					lugar = sc.nextLine();
+					gv.modificarViaje(lugar);
+
 				} // Fin Case 4
 				
 			} // Fin Switch
